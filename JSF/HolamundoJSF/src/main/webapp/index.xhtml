@@ -1,0 +1,28 @@
+<!-- Siempre agramos el namespace de JSF para usar los componentes -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://java.sun.com/jsf/html">
+    
+    <head>
+        <title>Hola mundo JSF</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <!-- Agregamos un formulario -->
+        <h:form>
+            <table>
+                    <tr>
+                        <td><h:outputLabel for="nombre" value="nombre: " /></td>
+                        <td><h:inputText id="nombre" value="#{candidato.nombre}"></h:inputText></td>
+                        
+                        <!-- Mensaje por si hay algun problema con el atributo -->
+                        <td><h:message for="nombre"></h:message></td>
+                    </tr>
+            </table>
+            
+            <h:commandButton action="#{vacanteForm.enviar()}" value="Enviar los datos"></h:commandButton>
+        </h:form>
+        
+        <!-- <h:outputLabel value="Hola muno desde JSF" /> -->
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : newjsp
+    Created on : 2 sept. 2022, 20:43:54
+    Author     : Fernando Cuatro
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+    
+    <!-- Uso de declaraciones -->
+    <jsp:declaration>
+        private int contadorVisitas = 1;
+    </jsp:declaration>
+
+    <html>
+        <body>
+            <h1>Ejemplo de un documento JSPx</h1>
+             
+            <!-- Ejemplod de salida de texto -->
+            <jsp:text>Saludos desde un documento JSPx</jsp:text> 
+            
+            <br/>
+            
+            <!-- Ejemplo de expresion con JSPx -->
+            <jsp:expression>
+                2*3
+            </jsp:expression>
+            
+            <!-- Ejemplo de jsp:scriptlet con JSPx -->
+            <jsp:scriptlet>
+                String nombreAplicacion = request.getContextPath();
+            </jsp:scriptlet>
+                
+            <!-- Imprimimos el nombre de la variable -->
+            <p>Nombre de la aplicacion: <jsp:expression>nombreAplicacion</jsp:expression> </p>
+            
+            <!-- Imprimimos el contador de visitas -->
+            <p>Contador de visitas: <jsp:expression>this.contadorVisitas++</jsp:expression> </p>
+            
+            <a href="index.html">Volver al documento HTML</a>
+        </body>
+    </html>
+
+
+</jsp:root>

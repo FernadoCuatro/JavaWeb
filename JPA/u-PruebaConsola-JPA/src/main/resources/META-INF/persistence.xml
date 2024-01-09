@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+  <!-- Configuramos la unidad de persistencia -->
+  <!-- PersonaPU de Persistence Unit -->
+  <persistence-unit name="EstudiantePU" transaction-type="RESOURCE_LOCAL">
+    <!-- Especificamos la clase de persistencia -->
+    <!-- Se agrega una o muchas -->
+    <!-- Conexion a la base de datos -->
+    <class>domain.Estudiante</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/pagoclientes_db?useSSL=false&amp;useTimezone=true&amp;serverTimezone=UTC"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.password" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.MysqlDataSource"/>
+      <!-- Para que se muestren algunos elementos de las consultas de base de datos -->
+      <!-- Para que agregue los detalles de las consultas a la base de datos -->
+      <property name="eclipselink.logging.level" value="FINE"/>
+      <!-- Para que se muestren los parametros de las consultas -->
+      <property name="eclipselink.logging.parameters" value="true"/>
+    </properties>
+  </persistence-unit>
+</persistence>

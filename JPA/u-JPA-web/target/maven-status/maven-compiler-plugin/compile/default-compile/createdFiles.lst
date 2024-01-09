@@ -1,0 +1,7 @@
+sga\domain\Estudiante.class
+sga\servicio\EstudianteService.class
+sga\datos\EstudianteDAO.class
+sga\datos\EstudianteDAOImpl.class
+sga\servicio\EstudianteServiceImpl.class
+sga\servicio\EstudianteServiceRemote.class
+sga\web\EstudianteServlet.class

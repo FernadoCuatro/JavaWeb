@@ -1,0 +1,13 @@
+sga\web\PersonaServlet.class
+sga\datos\PersonaDAO.class
+sga\servicio\UsuarioServiceImpl.class
+sga\domain\Usuario.class
+sga\web\UsuarioServlet.class
+sga\servicio\UsuarioService.class
+sga\domain\Persona.class
+sga\datos\PersonaDAOImpl.class
+sga\servicio\PersonaService.class
+sga\datos\UsuarioDAOImpl.class
+sga\servicio\PersonaServiceRemote.class
+sga\datos\UsuarioDAO.class
+sga\servicio\PersonaServiceImpl.class

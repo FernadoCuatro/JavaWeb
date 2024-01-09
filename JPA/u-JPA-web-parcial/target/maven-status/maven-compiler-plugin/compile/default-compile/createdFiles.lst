@@ -1,0 +1,7 @@
+sga\datos\MotoristaDAOImpl.class
+sga\domain\Motorista.class
+sga\web\MotoristaServlet.class
+sga\servicio\MotoristaServiceRemote.class
+sga\datos\MotoristaDAO.class
+sga\servicio\MotoristaServiceImpl.class
+sga\servicio\MotoristaService.class

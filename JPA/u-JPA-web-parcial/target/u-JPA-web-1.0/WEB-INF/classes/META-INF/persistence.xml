@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+  
+  
+  <!-- Debido a que es una aplicacion empresarial, no se puede hacer con RESOURCE_LOCAL -->
+  <!-- Tiene que ser en un servidor como Glassfish -->
+      
+  <!-- Configuramos la unidad de persistencia -->
+  <!-- PersonaPU de Persistence Unit -->
+    <!--  
+    <persistence-unit name="PersonaPU" transaction-type="RESOURCE_LOCAL">
+       Especificamos la clase de persistencia 
+       Se agrega una o muchas 
+       Conexion a la base de datos 
+      <class>sga.domain.Persona</class>
+      <properties>
+        <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/gestionpersonas_bd?useSSL=false&amp;useTimezone=true&amp;serverTimezone=UTC"/>
+        <property name="javax.persistence.jdbc.user" value="root"/>
+        <property name="javax.persistence.jdbc.password" value=""/>
+        <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.MysqlDataSource"/>
+         Para que se muestren algunos elementos de las consultas de base de datos 
+         Para que agregue los detalles de las consultas a la base de datos 
+        <property name="eclipselink.logging.level" value="FINE"/>
+         Para que se muestren los parametros de las consultas 
+        <property name="eclipselink.logging.parameters" value="true"/>
+      </properties>
+    </persistence-unit>
+    -->
+  
+  <!-- Debemos una transaccion de tipo JTA -->
+  <!-- Java Transaction Api -->
+  <persistence-unit name="MotoristaPU" transaction-type="JTA">
+      <!-- Configuracion de JTA Data Source -->
+      <!-- Que tambien se configura en Glassfish -->
+      <jta-data-source>jdbc/MotoristaDB</jta-data-source>
+  </persistence-unit>
+  
+  <!-- Para la configuracion de JTA en el servidor de GlassFish -->
+  <!--
+    Colocamos el mysql-connector-j-8.0.31 desde la pagina de mysql
+    Y obtenemos el archivo .jar -> mysql-connector-j-8.0.31
+    
+    Vamos a la ruta de instalacion de GlassFish
+    Disco instalacion:\AppServers\glassfish5\glassfish\lib -> Pegamos el archivo .jar
+    
+    Se levanta GlassFish
+    Despues abrimos: View Domain Admin Console -> Entramos al apartado JDBC -> Creamos un JDBC Connection Pools
+    
+    New -> Nombre: PersonaPool - Resource Type: javax.sql.ConnectionPoolDataSource - Database Driver Vendor: MySql -> Next
+    Datasource Classname: com.mysql.cj.jdbc.MysqlDataSource
+    
+    Nos vamos hasta el final:
+    password: admin
+    databaseName: pagoclientes_db
+    serverName: localhost
+    datasourceName: com.mysql.cj.jdbc.MysqlDataSource
+    user: root
+    portNumber: 3306
+    password: root
+    
+    Agregamos Propiedades:
+    useSSL: false
+    useTimezone: true
+    serverTimezone: UTC
+    
+    Delete: roleName, networkProtocol
+    
+    FINISH!!
+    
+    Entramos a: PersonaPool Para ver si esta haciendo ping
+
+    for MySQL
+    ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+
+    for MariaDB
+    ALTER USER 'root'@'localhost' IDENTIFIED VIA mysql_native_password USING PASSWORD('root');
+
+    si da un error porque la contraseña es vacia, utilizamos los codigos de arriba, para determinar la password como: root.
+    
+    Pool de conexiones completo
+  -->
+  
+  <!--
+    Otra vez a JDBC -> JDBC Resources
+    JNDI Name: jdbc/EstudianteDB (Debe ser el mismo nombre que se establecio arriba en el JTA)
+    
+    Pool Name: PersonaPool, le damos en OK!!
+  -->
+  
+</persistence>

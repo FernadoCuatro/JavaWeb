@@ -1,0 +1,10 @@
+domain\PersonaDTO.class
+datos\UsuarioDAO.class
+datos\PersonaDAOJDBC.class
+domain\Usuario.class
+test\ManejoPersonaInterface.class
+datos\Conexion.class
+datos\PersonaDAO.class
+test\ManejoUsuarios.class
+test\TestManejoPersonas.class
+test\ManejoPersona.class

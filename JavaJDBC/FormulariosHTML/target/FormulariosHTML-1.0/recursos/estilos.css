@@ -1,0 +1,53 @@
+body {
+    line-height: 1.6em;
+    font-family: "Arial", "Lucida Grande", "Sans-Serif";
+    font-size: 1.2em;
+    color: #353535;
+}
+
+table#enfasis-columna {
+    margin: 20px auto;
+    width: 480px;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+table#enfasis-columna caption {
+    font-size: 1.5em;
+    margin: 20px 0px;
+    font-weight: bold;
+}
+
+table#enfasis-columna th {
+    font-size: .8em;
+    font-weight: bold;
+    padding: 12px 15px;
+    color: #999999;
+}
+
+table#enfasis-columna td {
+    padding: 10px 15px;
+    font-size: .8em;
+}
+
+select.extendido, textarea.extendido {
+    width: 100%;
+}
+
+textarea.extendido {
+    resize: none;
+}
+
+input.default,
+textarea.extendido,
+select.extendido {
+    border: 1px solid #353535;
+    border-radius: 5px;
+}
+
+th.columna {
+    background-color: #eee;
+}
+.default {
+    padding: 10px 20px;
+}
